@@ -18,7 +18,7 @@ spec:
           - name: green
             image: nakotisanthosh/udacitybluecap
             volumeMounts:
-              - mountPath: /mnt/test
+              - mountPath: /mnt/voltest
                 name: amazonVolume
             ports:
                 name: http-server
