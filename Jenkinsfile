@@ -56,7 +56,7 @@ pipeline {
 			}
 		}
 
-		stage('Wait user approve') {
+	stage('Wait user approve') {
             steps {
                 input "Is that Blue server is working then approve for Green?"
             }
