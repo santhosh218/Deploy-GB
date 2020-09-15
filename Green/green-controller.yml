@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+      name: green
+      labels:
+        app: green
+spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          app: green
+      template:
+        metadata:
+          labels:
+            app: green
+        spec:
+          containers:
+          - name: green
+            image: nakotisanthosh/udacitybluecap
+            volumeMounts:
+              - mountPath: /mnt/test
+                name: amazonVolume
+            ports:
+                name: http-server
+                containerPort: 80
+          volumes:
+            name: amazonVolume
+            persistentVolumeClaim: 
+              claimName: amazonVolumeclaim
+              readOnly: false

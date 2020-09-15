@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: bluelb
+  labels:
+    app: bluelb
+spec:
+    selector:
+        app: blue
+    ports:
+        port: 8001
+        targetPort: 80
+    type: LoadBalancer

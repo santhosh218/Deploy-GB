@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: greenlb
+  labels:
+    app: greenlb
+spec:
+    selector:
+        app: green
+    ports:
+        port: 8000
+        targetPort: 80
+    type: LoadBalancer
