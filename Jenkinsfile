@@ -73,16 +73,6 @@ pipeline {
 		}
 
 
-		stage('Creating persistent volume') {
-			steps {
-				withAWS(region:'us-west-2', credentials:'aws-static') {
-					sh '''
-						kubectl apply -f ./Green/greenpv.yml
-					'''
-				}
-			}
-		}
-
 		stage('Creating persistent volume claim') {
 			steps {
 				withAWS(region:'us-west-2', credentials:'aws-static') {
