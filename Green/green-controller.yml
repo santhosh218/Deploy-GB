@@ -21,7 +21,7 @@ spec:
               - mountPath: /mnt/voltest
                 name: amazonVolume
             ports:
-                name: http-server
+              - name: http-server
                 containerPort: 80
           volumes:
             name: amazonVolume
