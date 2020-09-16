@@ -16,7 +16,7 @@ spec:
         spec:
           containers:
           - name: blue
-            image: nakotisanthosh/udacitybluecap
+            image: nakotisanthosh/udacitybluecap:latest
             volumeMounts:
               - mountPath: /mnt/test
                 name: deployment-volume
