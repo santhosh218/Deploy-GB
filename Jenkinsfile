@@ -40,7 +40,7 @@ pipeline {
 			steps {
 				withAWS(region:'us-west-2', credentials:'aws-static') {
 					sh '''
-						kubectl create -f ./Blue/blue-controller.yml
+						kubectl apply -f ./Blue/blue-controller.yml
 					'''
 				}
 			}
@@ -50,7 +50,7 @@ pipeline {
 			steps {
 				withAWS(region:'us-west-2', credentials:'aws-static') {
 					sh '''
-						kubectl create -f ./Blue/blue-service.yml
+						kubectl apply -f ./Blue/blue-service.yml
 					'''
 				}
 			}
@@ -66,7 +66,7 @@ pipeline {
 			steps {
 				withAWS(region:'us-west-2', credentials:'aws-static') {
 					sh '''
-						kubectl create -f ./Green/greensc.yml
+						kubectl apply -f ./Green/greensc.yml
 					'''
 				}
 			}
@@ -77,7 +77,7 @@ pipeline {
 			steps {
 				withAWS(region:'us-west-2', credentials:'aws-static') {
 					sh '''
-						kubectl create -f ./Green/greenpv.yml
+						kubectl apply -f ./Green/greenpv.yml
 					'''
 				}
 			}
@@ -87,7 +87,7 @@ pipeline {
 			steps {
 				withAWS(region:'us-west-2', credentials:'aws-static') {
 					sh '''
-						kubectl create -f ./Green/greenpvc.yml
+						kubectl apply -f ./Green/greenpvc.yml
 					'''
 				}
 			}
@@ -97,7 +97,7 @@ pipeline {
 			steps {
 				withAWS(region:'us-west-2', credentials:'aws-static') {
 					sh '''
-						kubectl create -f ./Green/green-controller.yml
+						kubectl apply -f ./Green/green-controller.yml
 					'''
 				}
 			}
@@ -107,7 +107,7 @@ pipeline {
 			steps {
 				withAWS(region:'us-west-2', credentials:'aws-static') {
 					sh '''
-						kubectl create -f ./Green/green-service.yml
+						kubectl apply -f ./Green/green-service.yml
 					'''
 				}
 			}
