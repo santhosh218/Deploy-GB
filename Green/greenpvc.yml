@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-    name: amazonVol-claim
+    name: aws-vol
     labels:
         app: green
 spec:
