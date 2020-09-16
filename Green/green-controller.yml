@@ -19,7 +19,7 @@ spec:
             image: nakotisanthosh/udacitybluecap
             volumeMounts:
               - mountPath: /mnt/voltest
-                name: amazonVolume
+                name: amazonvolume
             ports:
               - name: http-server
                 containerPort: 80
