@@ -24,7 +24,7 @@ spec:
               - name: http-server
                 containerPort: 80
           volumes:
-          - name: amazonVolume
+          - name: amazonvolume
             persistentVolumeClaim: 
               claimName: aws-vol
               readOnly: false
