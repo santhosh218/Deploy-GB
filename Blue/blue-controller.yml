@@ -21,8 +21,8 @@ spec:
               - mountPath: /mnt/test
                 name: deployment-volume
             ports:
-                name: http-server
-                containerPort: 80
+                  name: http-server
+                  containerPort: 80
           volumes:
             - name: deployment-volume
               emptyDir: {}
