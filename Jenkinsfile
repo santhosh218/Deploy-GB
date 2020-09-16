@@ -1,14 +1,14 @@
 pipeline {
-    agent any
+	agent any
 	stages {
 
-        stage('Lint Blue server HTML') {
+        	stage('Lint Blue server HTML') {
 			steps {
 				sh 'tidy -q -e ./Blue/*.html'
 			}
 		}
 
-        stage('Build Blue Docker Image') {
+        	stage('Build Blue Docker Image') {
 			steps {
 				withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD']]){
 					sh "docker build --tag=udacitybluecap ./Blue/"
@@ -26,7 +26,7 @@ pipeline {
 			}
 		}
 
-        stage('Set current kubectl context') {
+        	stage('Set current kubectl context') {
 			steps {
 				withAWS(region:'us-west-2', credentials:'aws-static') {
 					sh '''
@@ -36,7 +36,7 @@ pipeline {
 			}
 		}
 
-        stage('Deploy blue container') {
+        	stage('Deploy blue container') {
 			steps {
 				withAWS(region:'us-west-2', credentials:'aws-static') {
 					sh '''
@@ -46,7 +46,7 @@ pipeline {
 			}
 		}
 
-        stage('Create the service in the cluster, redirect to blue') {
+        	stage('Create the service in the cluster, redirect to blue') {
 			steps {
 				withAWS(region:'us-west-2', credentials:'aws-static') {
 					sh '''
@@ -56,9 +56,9 @@ pipeline {
 			}
 		}
 
-	stage('Wait user approve') {
-            steps {
-                input "Is that Blue server is working then approve for Green?"
+		stage('Wait user approve') {
+			steps {
+				input "Is that Blue server is working then approve for Green?"
             }
         }
 
