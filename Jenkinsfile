@@ -103,7 +103,7 @@ pipeline {
 			}
 		}
 
-		stage('Deploy Green container') {
+		stage('Deploy Green service') {
 			steps {
 				withAWS(region:'us-west-2', credentials:'aws-static') {
 					sh '''
