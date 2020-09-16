@@ -16,7 +16,7 @@ spec:
         spec:
           containers:
           - name: green
-            image: nakotisanthosh/udacitybluecap
+            image: nakotisanthosh/udacitybluecap:latest
             volumeMounts:
               - mountPath: /mnt/voltest
                 name: amazonvolume
